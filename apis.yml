@@ -1,7 +1,11 @@
 aid: amerisourcebergen
-url: https://raw.githubusercontent.com/api-evangelist/amerisourcebergen/refs/heads/main/apis.yml
+url: 
+  https://raw.githubusercontent.com/api-evangelist/amerisourcebergen/refs/heads/main/apis.yml
 modified: '2026-03-23'
 apis: []
 common:
   - type: Website
     url: https://www.amerisourcebergen.com
+description: >-
+  AmerisourceBergen fosters a positive impact on healthcare around the world by advancing
+  the development and delivery of pharmaceuticals and healthcare products.
