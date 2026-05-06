@@ -1,5 +1,6 @@
 specification: FinOps Framework
 specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
 alignedWith:
   framework: FinOps Foundation Framework
   frameworkUrl: https://www.finops.org/framework/
@@ -8,127 +9,64 @@ alignedWith:
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
 provider: AmerisourceBergen
 providerId: amerisourcebergen
-publisherName: AmerisourceBergen
-serviceCategory: API
+publisherName: Cencora, Inc.
+serviceCategory: Pharmaceutical Distribution
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: false
 tags:
+  - FinOps
+  - FOCUS
   - Pharmaceutical Distribution
   - Healthcare
-  - Drug Distribution
-  - Manufacturer Solutions
-  - Provider Solutions
-  - Animal Health
-  - Life Sciences
-  - FinOps
-  - Cost Management
-  - FOCUS
-description: FinOps framework definition for the AmerisourceBergen API surface. Provides a FOCUS-aligned
-  mapping for cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
-principles:
-  - name: Visibility
-    description: Make API consumption costs visible to engineering, product, and finance teams in near
-      real-time.
-  - name: Allocation
-    description: Tag every chargeable API call with the consuming team, environment, application, and
-      feature so cost can be allocated.
-  - name: Optimization
-    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
-      cost per useful unit of work.
-  - name: Accountability
-    description: Establish budget owners and chargeback or showback flows for each consuming team.
-domains:
-  - name: Understand Usage and Cost
-    capabilities:
-      - Data Ingestion
-      - Allocation
-      - Reporting and Analytics
-      - Anomaly Management
-  - name: Quantify Business Value
-    capabilities:
-      - Planning and Estimating
-      - Forecasting
-      - Budgeting
-      - Benchmarking
-      - Unit Economics
-  - name: Optimize Usage and Cost
-    capabilities:
-      - Architecting for Cloud
-      - Rate Optimization
-      - Workload Optimization
-      - Cloud Sustainability
-      - Licensing and SaaS
-  - name: Manage the FinOps Practice
-    capabilities:
-      - FinOps Practice Operations
-      - FinOps Education and Enablement
-      - Invoicing and Chargeback
-      - Onboarding Workloads
-      - Intersecting Disciplines
+description: >-
+  FOCUS-aligned FinOps placeholder for AmerisourceBergen / Cencora. There is no
+  developer API metered billing surface; pharmaceutical distribution is
+  invoiced as cost-of-goods plus distribution fees under master agreements,
+  outside the scope of API FinOps.
+notes: >-
+  No public API billing surface. Charges flow through distribution agreements
+  rather than per-request invoices.
+sources:
+  - https://www.cencora.com
 billingModel:
-  pricingCategory: Usage-Based
-  billingFrequency: Monthly
+  pricingCategory: Not Applicable
+  billingFrequency: Not Applicable
   billingCurrency: USD
   chargeCategories:
     - Usage
-    - Purchase
-    - Tax
-    - Credit
-    - Adjustment
-  chargeFrequency: Recurring
 focusColumns:
   ServiceName: AmerisourceBergen
-  ServiceCategory: Developer Tools / API
+  ServiceCategory: Pharmaceutical Distribution
   ProviderName: AmerisourceBergen
-  PublisherName: AmerisourceBergen
-  InvoiceIssuerName: AmerisourceBergen
-  PricingCategory: Usage-Based
-  PricingUnit: request
+  PublisherName: Cencora, Inc.
+  InvoiceIssuerName: Cencora, Inc.
   BillingCurrency: USD
-  ChargeCategory: Usage
 meters:
   - name: api_requests
-    description: Count of billable API requests
+    description: Placeholder; not currently billed by Cencora as a developer line item
     unit: request
     aggregation: sum
     dimensions:
-      - api
-      - endpoint
-      - tier
-      - region
       - consumer
-  - name: data_egress
-    description: Bytes returned over the network in API responses
-    unit: GB
-    aggregation: sum
-    dimensions:
-      - api
-      - region
-      - consumer
-  - name: compute_seconds
-    description: Server-side compute consumed by the request, where applicable
-    unit: second
-    aggregation: sum
-    dimensions:
-      - api
-      - endpoint
-      - tier
-apis:
-  - name: AmerisourceBergen Website
-    baseURL: https://www.cencora.com
-    tags:
-      - Pharmaceutical Distribution
-      - Healthcare
-      - Drug Distribution
-    serviceName: AmerisourceBergen Website
-    serviceCategory: API
-unitEconomics:
-  - name: Cost per 1K Requests
-    metric: billed_cost / (api_requests / 1000)
-    target: TBD
-  - name: Cost per Active Consumer
-    metric: billed_cost / active_consumers
-    target: TBD
+principles:
+  - name: Visibility
+    description: >-
+      Cencora customers see consumption through EDI usage reporting and
+      ordering portals, not through a public usage API.
+  - name: Allocation
+    description: >-
+      Allocate any integration costs to the supply-chain or procurement
+      function that owns the Cencora relationship.
+  - name: Optimization
+    description: >-
+      Cost levers are batching of EDI documents, order consolidation, and
+      contract pricing tiers, not API request optimization.
+  - name: Accountability
+    description: >-
+      Budget ownership sits with procurement and supply-chain leadership; FinOps
+      practitioners should partner with them rather than treat this as an API
+      spend line.
 maintainers:
   - FN: API Evangelist
     email: info@apievangelist.com
