@@ -6,7 +6,7 @@ description: >-
   by advancing the development and delivery of pharmaceuticals and healthcare products. The
   company provides pharmaceutical distribution, manufacturer solutions, provider solutions,
   and animal health solutions across 50+ countries through 1,300+ facilities.
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Pharmaceutical Distribution
   - Healthcare
@@ -26,7 +26,7 @@ apis:
       - Pharmaceutical Distribution
       - Healthcare
       - Drug Distribution
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://www.cencora.com
     humanURL: https://www.amerisourcebergen.com
     properties:
