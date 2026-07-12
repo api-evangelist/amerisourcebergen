@@ -37,6 +37,8 @@ apis:
       distributors, serving pharmaceutical manufacturers, healthcare providers, and
       patients worldwide. The company does not currently publish a public developer API.
 common:
+  - type: DomainSecurity
+    url: security/amerisourcebergen-domain-security.yml
   - type: Portal
     url: https://www.amerisourcebergen.com
   - type: Website
