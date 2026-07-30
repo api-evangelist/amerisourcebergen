@@ -6,7 +6,19 @@ description: >-
   by advancing the development and delivery of pharmaceuticals and healthcare products. The
   company provides pharmaceutical distribution, manufacturer solutions, provider solutions,
   and animal health solutions across 50+ countries through 1,300+ facilities.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amerisourcebergen.png
 tags:
   - Pharmaceutical Distribution
   - Healthcare
