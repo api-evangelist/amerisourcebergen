@@ -6,6 +6,17 @@ description: >-
   by advancing the development and delivery of pharmaceuticals and healthcare products. The
   company provides pharmaceutical distribution, manufacturer solutions, provider solutions,
   and animal health solutions across 50+ countries through 1,300+ facilities.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
