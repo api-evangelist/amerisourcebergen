@@ -1,0 +1,43 @@
+generated: '2026-09-02'
+method: searched
+source: >-
+  npm registry search, PyPI, and the GitHub accounts github.com/AmeriSourceBergen and
+  github.com/Cencora, plus Cencora's own site.
+note: >-
+  Cencora (formerly AmerisourceBergen) publishes no first-party API client library in any
+  public package registry. There is no SDK to catalogue, because there is no public API to
+  wrap — the developer portal at api.cencora.com is entirely behind SAP XSUAA login.
+  No SDKs pointer is emitted.
+packages: []
+package_count: 0
+official_sdk_count: 0
+registries_checked:
+  - registry: npm
+    query: https://registry.npmjs.org/-/v1/search?text=cencora
+    status: 200
+    result: 0 packages
+  - registry: pypi
+    query: https://pypi.org/pypi/cencora/json
+    status: 404
+    result: absent
+related_repositories:
+  - url: https://github.com/AmeriSourceBergen
+    type: github-organization
+    public_repos: 0
+    note: >-
+      Real but empty organization, created 2017-10-31, unverified, no description,
+      zero public repositories. Not a developer surface — no GitHubOrganization pointer emitted.
+  - url: https://github.com/Cencora
+    type: github-user
+    display_name: PharmaLex
+    public_repos: 4
+    repos: [BackpredicteR, SampleSize2Binomials, StabEVax, Cencora]
+    languages: [R]
+    last_push: '2024-07-10'
+    note: >-
+      Account belongs to PharmaLex, a Cencora company. The four public repositories are R
+      biostatistics packages (back-prediction, sample-size, stability modelling), not API
+      client libraries, and none are published to a registry Cencora controls. Recorded for
+      completeness; deliberately NOT counted as an SDK.
+x-evidence:
+  checked: '2026-09-02'

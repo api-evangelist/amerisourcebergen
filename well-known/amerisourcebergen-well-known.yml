@@ -1,0 +1,135 @@
+generated: '2026-09-02'
+method: probed
+source: >-
+  Live probes of the named /.well-known/ path list against every host in apis.yml plus the
+  Cencora API developer-portal host discovered during contract discovery.
+note: >-
+  Cencora (formerly AmerisourceBergen) serves no /.well-known/ document from either of its
+  own corporate hosts — every named path 404s on www.cencora.com and www.amerisourcebergen.com.
+  The API developer-portal host api.cencora.com answers HTTP 200 to EVERY path, including the
+  negative control, with an identical ~858-byte HTML shim that redirects to SAP XSUAA OAuth;
+  it is an authentication catch-all, not a discovery surface, so it records hit_count: 0.
+  The only real discovery document reachable in Cencora's API path is the OIDC metadata served
+  by its SAP BTP XSUAA tenant, which lives on SAP's hana.ondemand.com domain rather than a
+  Cencora-controlled host. It is recorded here because it is genuine, verifiable and useful,
+  but NO WellKnown/SecurityTxt common[] pointer is emitted for this repo: those pointers assert
+  that the provider serves the surface from its own host, and Cencora does not.
+hit_count: 0
+hosts:
+  - host: https://www.cencora.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/api-catalog.json
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/ucp.json
+        status: 404
+      - path: /.well-known/acp.json
+        status: 404
+      - path: /.well-known/aauth-resource.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+    path_echo_control: passed
+    soft_404_control:
+      path: /.well-known/amerisourcebergen-negative-control-7f3ab91c.json
+      status: 404
+      bytes: 2385
+  - host: https://www.amerisourcebergen.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/api-catalog.json
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/ucp.json
+        status: 404
+      - path: /.well-known/acp.json
+        status: 404
+      - path: /.well-known/aauth-resource.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+    path_echo_control: passed
+    soft_404_control:
+      path: /.well-known/amerisourcebergen-negative-control-7f3ab91c.json
+      status: 404
+      bytes: 2385
+  - host: https://api.cencora.com
+    note: >-
+      Catch-all. Every path, existing or not, returns HTTP 200 with the same ~858-byte
+      SAP XSUAA OAuth redirect shim. No document is served; no file was saved.
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+      - path: /.well-known/openid-configuration
+        status: 200
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+      - path: /.well-known/oauth-protected-resource
+        status: 200
+      - path: /.well-known/api-catalog
+        status: 200
+      - path: /.well-known/api-catalog.json
+        status: 200
+      - path: /.well-known/ai-plugin.json
+        status: 200
+      - path: /.well-known/ucp.json
+        status: 200
+      - path: /.well-known/acp.json
+        status: 200
+      - path: /.well-known/aauth-resource.json
+        status: 200
+      - path: /.well-known/agent-card.json
+        status: 200
+      - path: /.well-known/agent.json
+        status: 200
+    path_echo_control: failed
+    soft_404_control:
+      path: /.well-known/amerisourcebergen-negative-control-7f3ab91c.json
+      status: 200
+      bytes: 860
+      verdict: >-
+        A path that cannot exist returned 200 with the same body as every real path.
+        Every hit on this host is discarded.
+  - host: https://ab-cloud-foundry-prd.authentication.us21.hana.ondemand.com
+    tenant_host: true
+    operator: SAP BTP (Cloud Foundry XSUAA) — Cencora-dedicated tenant "ab-cloud-foundry-prd"
+    note: >-
+      Not a Cencora-controlled domain. This is the authorization server api.cencora.com
+      redirects to (client_id sb-dev-portal-xsuaa!b33). The OIDC metadata below is real and
+      parses, and it is what establishes Cencora's API auth model, but because SAP serves it
+      from SAP's domain it does NOT earn Cencora a WellKnown pointer.
+    documents:
+      - path: /.well-known/openid-configuration
+        status: 200
+        file: amerisourcebergen-openid-configuration.json
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        note: returns the SAP login HTML page, not a metadata document — not saved
+x-evidence:
+  checked: '2026-09-02'
+  negative_control_path: /.well-known/amerisourcebergen-negative-control-7f3ab91c.json

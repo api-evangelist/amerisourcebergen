@@ -1,0 +1,110 @@
+generated: '2026-09-02'
+method: probed
+source: >-
+  Live probes of api.cencora.com and its SAP XSUAA authorization server, plus Cencora's own
+  published pages (responsible-disclosure, pharmaceutical-serialization, global-privacy-statement).
+note: >-
+  Cencora publishes no machine-readable contract, so nothing here is asserted from a spec.
+  Every `conforms: true` below is backed by a probed endpoint or a Cencora-published page,
+  named in `evidence`. The pharmaceutical domain standards a distributor of this size must
+  implement operationally — DSCSA/FMD serialisation, GS1 EPCIS event exchange, EDI/X12
+  ordering — are NOT declared in any public Cencora contract, which is why
+  domain_standard_conformance cannot be awarded: the regime is real, the contract that would
+  declare it is not published.
+standards:
+  - id: oauth2
+    conforms: true
+    evidence: >-
+      api.cencora.com issues an RFC 6749 authorization_code redirect to
+      ab-cloud-foundry-prd.authentication.us21.hana.ondemand.com/oauth/authorize
+      (observed 2026-09-02).
+    source: https://api.cencora.com/
+  - id: oauth2-pkce-rfc7636
+    conforms: true
+    evidence: The observed authorize request carries code_challenge with code_challenge_method=S256.
+    source: https://api.cencora.com/
+  - id: oidc-discovery
+    conforms: true
+    evidence: >-
+      The authorization server serves a valid OpenID Provider Metadata document with issuer,
+      jwks_uri, userinfo_endpoint and end_session_endpoint.
+    source: https://ab-cloud-foundry-prd.authentication.us21.hana.ondemand.com/.well-known/openid-configuration
+  - id: rfc8414-oauth-authorization-server-metadata
+    conforms: false
+    evidence: >-
+      /.well-known/oauth-authorization-server on the XSUAA host returns the SAP login HTML page,
+      not a metadata document.
+  - id: rfc9728-oauth-protected-resource
+    conforms: false
+    evidence: >-
+      api.cencora.com answers /.well-known/oauth-protected-resource with the same OAuth redirect
+      shim it answers every path with; no protected-resource metadata is served.
+  - id: rfc9116-security-txt
+    conforms: false
+    evidence: /.well-known/security.txt 404s on www.cencora.com and www.amerisourcebergen.com.
+  - id: coordinated-vulnerability-disclosure
+    conforms: true
+    evidence: >-
+      Published Responsible Security Disclosure program with scope, researcher guidelines,
+      coordinated-disclosure requirement and an explicit good-faith safe harbour.
+    source: https://www.cencora.com/responsible-disclosure
+  - id: llms-txt
+    conforms: true
+    evidence: A 5.6KB llms.txt is served at the site root and describes the company for AI consumers.
+    source: https://www.cencora.com/llms.txt
+  - id: openapi
+    conforms: false
+    evidence: >-
+      No OpenAPI/Swagger document was found at any probed path on www.cencora.com,
+      www.amerisourcebergen.com or api.cencora.com.
+  - id: asyncapi
+    conforms: false
+    evidence: No published event, streaming or webhook surface was found.
+  - id: graphql
+    conforms: false
+    evidence: /graphql on api.cencora.com returns the OAuth redirect shim, not a GraphQL endpoint.
+  - id: soap-wsdl
+    conforms: false
+    evidence: ?wsdl and /soap?wsdl return no WSDL on either corporate or API host.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: No contract or error reference is published to assess.
+domain_standards:
+  - id: dscsa
+    name: Drug Supply Chain Security Act (US, 21 U.S.C. 360eee)
+    contract_declared: false
+    operationally_claimed: true
+    evidence: >-
+      Cencora's pharmaceutical serialization page states it provides DSCSA- and FMD-compliant
+      3PL serialization services; the newsroom publishes DSCSA compliance guidance. This is a
+      marketing/program claim, not a contract declaration — no serialization data interface,
+      EPCIS endpoint or message schema is published.
+    source: https://www.cencora.com/solutions/pharmaceutical-serialization
+  - id: eu-fmd
+    name: EU Falsified Medicines Directive (2011/62/EU)
+    contract_declared: false
+    operationally_claimed: true
+    evidence: Named alongside DSCSA on the same serialization solutions page.
+    source: https://www.cencora.com/solutions/pharmaceutical-serialization
+  - id: gs1-epcis
+    name: GS1 EPCIS
+    contract_declared: false
+    operationally_claimed: false
+    evidence: >-
+      Not named anywhere in Cencora's public pages. A US wholesale distributor almost
+      certainly exchanges EPCIS events under DSCSA, but nothing public says so and nothing
+      was fabricated here.
+  - id: gdpr
+    name: EU General Data Protection Regulation
+    contract_declared: false
+    operationally_claimed: true
+    evidence: The Global Privacy Statement references GDPR throughout and states data-subject rights.
+    source: https://www.cencora.com/global-privacy-statement
+compliance_program_published: false
+compliance_note: >-
+  No Compliance pointer is emitted. Cencora's quality-management-and-compliance page describes
+  ISO 13485 / MDSAP / GMP consulting services it SELLS to clients, not certifications Cencora
+  itself holds; trust.cencora.com exists but answers a Cloudflare bot challenge (HTTP 403), so
+  no certification list could be read. Crediting either would be an over-claim.
+x-evidence:
+  checked: '2026-09-02'

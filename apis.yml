@@ -40,7 +40,7 @@ tags:
   - Life Sciences
   - Fortune 100
 created: '2024-01-01'
-modified: '2026-04-19'
+modified: '2026-09-02'
 specificationVersion: '0.23'
 apis:
   - aid: amerisourcebergen:website
@@ -58,24 +58,64 @@ apis:
     description: >-
       AmerisourceBergen (now Cencora) is one of the largest global pharmaceutical
       distributors, serving pharmaceutical manufacturers, healthcare providers, and
-      patients worldwide. The company does not currently publish a public developer API.
+      patients worldwide. The company does not currently publish a public developer API reference. Its API developer
+      portal is gated (see the Cencora API Developer Portal entry below).
+  - aid: amerisourcebergen:developer-portal
+    name: Cencora API Developer Portal
+    tags:
+      - Developer Portal
+      - API Management
+      - Pharmaceutical Distribution
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+    baseURL: https://api.cencora.com
+    humanURL: https://api.cencora.com
+    properties:
+      - type: Portal
+        url: https://api.cencora.com
+      - type: Authentication
+        url: authentication/amerisourcebergen-authentication.yml
+      - type: OAuthScopes
+        url: scopes/amerisourcebergen-scopes.yml
+    description: >-
+      Cencora operates an SAP API Business Hub Enterprise developer portal at api.cencora.com —
+      DNS resolves to ab-cloud-foundry-prd.apibhubenterprise.cfapps.us21.hana.ondemand.com, and
+      every request, on every path, returns an HTML shim that redirects to the SAP XSUAA
+      authorization server with client_id sb-dev-portal-xsuaa!b33 and PKCE S256. The portal is
+      real and live, but no API catalogue, reference, contract or tool listing is reachable
+      without credentials, and Cencora publishes no page describing how a developer obtains
+      them. Probed 2026-09-02.
 common:
   - type: DomainSecurity
     url: security/amerisourcebergen-domain-security.yml
+  - type: LLMsTxt
+    name: Cencora llms.txt (provider-published)
+    url: llms/amerisourcebergen-llms.txt
+  - type: Authentication
+    url: authentication/amerisourcebergen-authentication.yml
+  - type: OAuthScopes
+    url: scopes/amerisourcebergen-scopes.yml
+  - type: Conformance
+    url: conformance/amerisourcebergen-conformance.yml
+  - type: VulnerabilityDisclosure
+    url: security/amerisourcebergen-vulnerability-disclosure.yml
+  - type: Security
+    name: Responsible Security Disclosure
+    url: https://www.cencora.com/responsible-disclosure
   - type: Portal
-    url: https://www.amerisourcebergen.com
+    name: Cencora API Developer Portal (gated)
+    url: https://api.cencora.com
   - type: Website
     url: https://www.cencora.com
   - type: PrivacyPolicy
-    url: https://www.amerisourcebergen.com/privacy-policy
+    url: https://www.cencora.com/global-privacy-statement-overview
   - type: TermsOfService
-    url: https://www.amerisourcebergen.com/terms-of-use
+    url: https://www.cencora.com/global-terms-and-conditions
   - type: Support
-    url: https://www.amerisourcebergen.com/contact
+    url: https://www.cencora.com/contact-us
   - type: LinkedIn
-    url: https://www.linkedin.com/company/amerisourcebergen
+    url: https://www.linkedin.com/company/cencoraglobal/
   - type: X
-    url: https://twitter.com/AmerisourceBrg
+    url: https://x.com/CencoraGlobal
   - type: Features
     data:
       - name: Pharmaceutical Distribution
@@ -119,3 +159,28 @@ common:
 maintainers:
   - FN: API Evangelist
     email: info@apievangelist.com
+
+x-enrichment:
+  date: '2026-09-02'
+  status: enriched
+  artifacts_added: 8
+  pass: local-v1
+x-coverage:
+  state: gated
+  reason: partner-login
+  detail: >-
+    Cencora runs a real SAP API Business Hub Enterprise developer portal at api.cencora.com,
+    but every path on that host — including /openapi.json, /.well-known/* and a control path
+    that cannot exist — returns the same 858-byte HTML shim redirecting to SAP XSUAA OAuth
+    (client_id sb-dev-portal-xsuaa!b33), so no catalogue, reference or contract is readable
+    without portal credentials Cencora publishes no way to request.
+  evidence:
+    - url: https://api.cencora.com/
+      status: 200
+    - url: https://api.cencora.com/openapi.json
+      status: 200
+    - url: https://developer.cencora.com/
+      status: 403
+    - url: https://www.cencora.com/llms.txt
+      status: 200
+  checked: '2026-09-02'

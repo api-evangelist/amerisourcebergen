@@ -1,0 +1,52 @@
+generated: '2026-09-02'
+method: probed
+source: https://ab-cloud-foundry-prd.authentication.us21.hana.ondemand.com/.well-known/openid-configuration
+docs: null
+note: >-
+  Probed, not derived from an OpenAPI — Cencora publishes no machine-readable contract.
+  These are the scopes the SAP XSUAA authorization server behind api.cencora.com advertises
+  in its OIDC discovery document. They are the standard OIDC identity scopes plus SAP's
+  roles/user_attributes claims; they are NOT Cencora business scopes. Any API-level scope
+  (order, inventory, returns, DSCSA/EPCIS) would live inside the gated developer portal and
+  requires authenticated introspection to enumerate. No Cencora scope reference page is
+  published anywhere on www.cencora.com.
+schemes:
+  - name: SAP XSUAA (Cencora developer portal)
+    source: well-known/amerisourcebergen-openid-configuration.json
+    issuer: https://ab-cloud-foundry-prd.authentication.us21.hana.ondemand.com/oauth/token
+    flows:
+      - flow: authorizationCode
+        authorizationUrl: https://ab-cloud-foundry-prd.authentication.us21.hana.ondemand.com/oauth/authorize
+        tokenUrl: https://ab-cloud-foundry-prd.authentication.us21.hana.ondemand.com/oauth/token
+scopes:
+  - scope: openid
+    description: OIDC — issue an ID token for the authenticated subject.
+    flows: [authorizationCode]
+    sources: [well-known/amerisourcebergen-openid-configuration.json]
+  - scope: profile
+    description: OIDC — basic profile claims.
+    flows: [authorizationCode]
+    sources: [well-known/amerisourcebergen-openid-configuration.json]
+  - scope: email
+    description: OIDC — email address claim.
+    flows: [authorizationCode]
+    sources: [well-known/amerisourcebergen-openid-configuration.json]
+  - scope: phone
+    description: OIDC — phone number claim.
+    flows: [authorizationCode]
+    sources: [well-known/amerisourcebergen-openid-configuration.json]
+  - scope: roles
+    description: SAP XSUAA — role collections assigned to the subject in the Cencora BTP subaccount.
+    flows: [authorizationCode]
+    sources: [well-known/amerisourcebergen-openid-configuration.json]
+  - scope: user_attributes
+    description: SAP XSUAA — tenant-defined user attributes used for instance-based authorization.
+    flows: [authorizationCode]
+    sources: [well-known/amerisourcebergen-openid-configuration.json]
+scope_count: 6
+business_scopes_published: false
+x-evidence:
+  checked: '2026-09-02'
+  probes:
+    - url: https://ab-cloud-foundry-prd.authentication.us21.hana.ondemand.com/.well-known/openid-configuration
+      http_status: 200

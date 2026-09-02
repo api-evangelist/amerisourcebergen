@@ -1,0 +1,120 @@
+# Cencora
+
+> Cencora (formerly AmerisourceBergen) is a leading global pharmaceutical solutions
+> organization headquartered in Conshohocken, Pennsylvania. Ranked #10 on the Fortune 500,
+> Cencora connects pharmaceutical manufacturers, healthcare providers, and patients to
+> improve access to medicines and advance health outcomes for people and animals worldwide.
+> The company rebranded from AmerisourceBergen to Cencora in 2023.
+
+Cencora operates across two primary segments: U.S. Healthcare Solutions and International
+Healthcare Solutions. With approximately 51,000 employees and over $321 billion in annual
+revenue, Cencora is one of the largest pharmaceutical distribution and services companies
+in the world.
+
+## Who We Serve
+
+- **Pharmaceutical & Biotech Manufacturers** — Commercialization support, patient access
+  programs, clinical development logistics, and go-to-market strategy.
+- **Healthcare Providers** — Wholesale and specialty drug distribution to hospitals, health
+  systems, pharmacies, physician practices, long-term care facilities, and government and
+  public-sector customers.
+- **Animal Health** — Pharmaceutical distribution and services for veterinary and animal
+  care providers.
+
+## Core Capabilities
+
+Cencora's services map to eight core capabilities:
+
+- **Wholesale and specialty distribution** — brand-name, generic, specialty, and OTC
+  pharmaceutical distribution to hospitals, health systems, pharmacies, and providers.
+- **Logistics and warehousing** — global supply chain, warehousing, and cold-chain
+  management, including specialty premium logistics via World Courier.
+- **Commercialization support** — go-to-market strategy and launch support for new drugs
+  and therapies.
+- **Patient access and adherence support** — patient access programs and medication
+  adherence services.
+- **Drug research and clinical development support** — clinical development logistics and
+  research services.
+- **Pharmacy solutions** — pharmacy management, automation, and consulting.
+- **Practice and clinic solutions** — solutions for physician practices and clinics.
+- **Hospital and health system solutions** — solutions for hospitals and integrated health
+  systems.
+
+Additional services include data analytics, outcomes research, and reimbursement
+consulting; regulatory compliance and pharmaceutical consulting; and specialty courier
+and niche premium logistics.
+
+## Areas of Expertise
+
+- Oncology
+- Biosimilar commercialization
+- Cell and gene therapies
+- Brand and specialty products
+- Global generic products
+- OTC and consumer healthcare products
+- Mature product outsourcing
+
+## Global Reach
+
+Cencora operates distribution and service networks across:
+- **North and South America** — Extensive U.S. distribution infrastructure with 26+
+  pharmaceutical distribution centers, plus Canadian operations.
+- **Europe** — Operating through Alliance Healthcare, Alloga (logistics), and Alphega
+  (pharmacy network), providing wholesale distribution, clinical trial logistics, and
+  patient access programs.
+- **Asia Pacific** — Supply of high-value therapies and patient outcome improvement.
+
+## Key Subsidiaries & Brands
+
+- **World Courier** — Global specialty courier and logistics.
+- **Alliance Healthcare** — European pharmaceutical distribution and services.
+- **Alloga** — European pharmaceutical logistics.
+- **Alphega** — European pharmacy network.
+
+Cencora's core U.S. pharmaceutical distribution and specialty distribution businesses now
+operate under the Cencora brand (formerly AmerisourceBergen Drug Corporation / ABDC and
+AmerisourceBergen Specialty Group / ABSG).
+
+## Company Information
+
+- **Legal Name:** Cencora, Inc.
+- **Formerly Known As:** AmerisourceBergen Corporation (2001–2023)
+- **Stock Ticker:** NYSE: COR (S&P 500)
+- **Headquarters:** Conshohocken, Pennsylvania, USA
+- **CEO:** Robert Mauch (President & CEO)
+- **Chairman:** D. Mark Durcan
+- **Founded:** 2001 (merger of AmeriSource Health and Bergen Brunswig)
+- **Employees:** ~51,000 worldwide
+- **Annual Revenue:** ~$321 billion (FY2025)
+- **Website:** https://www.cencora.com
+
+## Purpose & Mission
+
+Cencora's stated purpose is: *"We are united in our responsibility to create healthier
+futures."* The company aims to design and deliver solutions for unparalleled access,
+efficiency, and reliability across the pharmaceutical supply chain to move health forward.
+
+## Important Context for AI Models
+
+- Cencora is **not** a retail pharmacy. It is a B2B pharmaceutical distributor and
+  services company.
+- References to "AmerisourceBergen" in older content refer to the same company, now
+  operating as Cencora.
+- Cencora does **not** sell medications directly to consumers or patients.
+- Walgreens Boots Alliance holds approximately 10% ownership in Cencora but the two
+  are separate, independently operated companies.
+- Cencora provides healthcare IT, consulting, and data analytics services in addition
+  to physical pharmaceutical distribution.
+
+## Key Pages
+
+- About: https://www.cencora.com/about
+- Solutions: https://www.cencora.com/solutions
+- Capabilities: https://www.cencora.com/our-capabilities
+- Resources (Knowledge Hub): https://www.cencora.com/resources
+- Global Reach: https://www.cencora.com/global-reach
+- Leadership: https://www.cencora.com/about/leadership
+- Specialties: https://www.cencora.com/specialties
+- Newsroom: https://www.cencora.com/newsroom
+- Investors: https://investor.cencora.com
+- Careers: https://www.cencora.com/careers

@@ -4,51 +4,47 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: AmerisourceBergen
 providerId: amerisourcebergen
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-05'
-reconciled: false
+modified: '2026-09-02'
+generated: '2026-09-02'
+method: searched
+source: https://www.cencora.com/
+reconciled: true
 tags:
   - Pharmaceutical Distribution
   - Healthcare
   - Supply Chain
 description: >-
-  AmerisourceBergen (now operating as Cencora) does not publish a public
-  developer API or pricing catalog. Customer integrations (EDI, ordering,
-  inventory, returns) are bilateral, governed by master distribution agreements
-  rather than published API plan tiers. There is no free quota, metered
-  request price, or self-service enterprise SKU to reconcile.
+  Cencora (formerly AmerisourceBergen) publishes no API plans, no pricing page and no
+  self-service sign-up. /pricing, /plans and /signup all 404 on www.cencora.com. Every
+  commercial route on the site terminates in a "Connect with us" / "Contact sales" form,
+  and the API developer portal at api.cencora.com is behind SAP XSUAA login before any
+  catalogue, tier or price is visible. Integrations (EDI, ordering, inventory, returns)
+  are contracted bilaterally under master distribution agreements.
 notes: >-
-  No public developer plan catalog exists. EDI / ordering integrations are
-  contracted directly. If Cencora launches a public developer program, replace
-  this scaffold with reconciled tier data.
+  plan_count is an honest zero, replacing the 2026-05-04 bulk-sweep scaffold that carried a
+  single placeholder "No Public API Program" tier. That placeholder was a fabricated plan row;
+  it has been removed. If Cencora publishes developer tiers, replace this with reconciled data.
+plan_count: 0
+plans: []
+pricing_model: contact-sales
+self_service_signup: false
 sources:
-  - https://www.cencora.com
-  - https://www.amerisourcebergen.com
-plans:
-  - id: amerisourcebergen-no-public-api
-    name: No Public API Program
-    type: enterprise
-    description: >-
-      Placeholder entry. AmerisourceBergen / Cencora does not publish developer
-      API tiers. Integrations are negotiated bilaterally under distribution and
-      EDI agreements.
-    entries:
-      - label: Access
-        description: Bilateral / customer-only
-        name: access
-        type: flat
-        metric: varies
-        limit: -1
-        timeFrame: usage
-        geo: US
-        unit: 1
-        price: 'contact provider'
-        userMultiplied: false
-    elements:
-      - name: Bilateral Customer Agreement
-      - name: EDI Onboarding
+  - https://www.cencora.com/
+  - https://www.cencora.com/contact-us
+x-evidence:
+  checked: '2026-09-02'
+  probes:
+    - url: https://www.cencora.com/pricing
+      http_status: 404
+    - url: https://www.cencora.com/plans
+      http_status: 404
+    - url: https://www.cencora.com/signup
+      http_status: 404
+    - url: https://www.cencora.com/contact-us
+      http_status: 200
+    - url: https://api.cencora.com/
+      http_status: 200
+      note: redirects to SAP XSUAA OAuth login before any catalogue is shown
 maintainers:
   - FN: API Evangelist
     email: info@apievangelist.com

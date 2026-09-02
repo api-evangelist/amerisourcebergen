@@ -1,0 +1,65 @@
+generated: '2026-09-02'
+method: probed
+source: >-
+  https://api.cencora.com/ (observed OAuth redirect) and
+  https://ab-cloud-foundry-prd.authentication.us21.hana.ondemand.com/.well-known/openid-configuration
+docs: null
+note: >-
+  Derived from live probes, not from an OpenAPI — Cencora publishes no machine-readable
+  contract. api.cencora.com is a Cencora-operated SAP API Business Hub Enterprise developer
+  portal (DNS CNAME ab-cloud-foundry-prd.apibhubenterprise.cfapps.us21.hana.ondemand.com).
+  Every request to it, on every path, returns an HTML shim that redirects the browser to the
+  SAP XSUAA authorization server with response_type=code, client_id=sb-dev-portal-xsuaa!b33
+  and code_challenge_method=S256. That is the whole of the observable auth surface: there is
+  no anonymous API, no API-key issuance page, and no published token-acquisition guide.
+summary:
+  types:
+    - oauth2
+    - openIdConnect
+  api_key_in: []
+  oauth2_flows:
+    - authorizationCode
+  pkce: S256
+  anonymous_access: false
+schemes:
+  - name: SAP XSUAA (Cencora developer portal)
+    type: oauth2
+    flows:
+      - flow: authorizationCode
+        authorizationUrl: https://ab-cloud-foundry-prd.authentication.us21.hana.ondemand.com/oauth/authorize
+        tokenUrl: https://ab-cloud-foundry-prd.authentication.us21.hana.ondemand.com/oauth/token
+        pkce_challenge_methods: [S256]
+    client_id_observed: sb-dev-portal-xsuaa!b33
+    redirect_uri_observed: https://api.cencora.com/login/callback
+    sources:
+      - https://api.cencora.com/
+  - name: SAP XSUAA OIDC
+    type: openIdConnect
+    openIdConnectUrl: https://ab-cloud-foundry-prd.authentication.us21.hana.ondemand.com/.well-known/openid-configuration
+    issuer: https://ab-cloud-foundry-prd.authentication.us21.hana.ondemand.com/oauth/token
+    jwks_uri: https://ab-cloud-foundry-prd.authentication.us21.hana.ondemand.com/token_keys
+    userinfo_endpoint: https://ab-cloud-foundry-prd.authentication.us21.hana.ondemand.com/userinfo
+    end_session_endpoint: https://ab-cloud-foundry-prd.authentication.us21.hana.ondemand.com/logout.do
+    token_endpoint_auth_methods_supported:
+      - client_secret_basic
+      - client_secret_post
+      - tls_client_auth
+    id_token_signing_alg_values_supported: [RS256, HS256]
+    sources:
+      - well-known/amerisourcebergen-openid-configuration.json
+gaps:
+  - >-
+    No public documentation of how a developer obtains credentials for the portal —
+    account provisioning appears to be a customer/partner motion, not self-service.
+  - >-
+    No protected-resource metadata (RFC 9728) is served at api.cencora.com, so an agent
+    cannot discover the authorization server from the resource.
+x-evidence:
+  checked: '2026-09-02'
+  probes:
+    - url: https://api.cencora.com/
+      http_status: 200
+      note: 858-byte HTML OAuth redirect shim; identical body on every path probed
+    - url: https://ab-cloud-foundry-prd.authentication.us21.hana.ondemand.com/.well-known/openid-configuration
+      http_status: 200
+      content_type: application/json

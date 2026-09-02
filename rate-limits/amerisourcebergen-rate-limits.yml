@@ -4,35 +4,47 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: AmerisourceBergen
 providerId: amerisourcebergen
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-05'
-reconciled: false
+modified: '2026-09-02'
+generated: '2026-09-02'
+method: searched
+source: https://www.cencora.com/
+reconciled: true
 tags:
   - Pharmaceutical Distribution
   - Healthcare
   - Rate Limiting
 description: >-
-  AmerisourceBergen / Cencora does not publish public rate-limit documentation.
-  EDI and ordering integrations are governed by bilateral SLAs rather than a
-  public per-key throttling contract. There are no documented 429 semantics or
-  per-second ceilings to reconcile.
+  Cencora (formerly AmerisourceBergen) publishes no rate-limit documentation. There is no
+  public API reference to carry limits, no documented 429 semantics, and no RateLimit-* /
+  X-RateLimit-* / Retry-After header contract, because every path on the API developer portal
+  api.cencora.com returns an OAuth redirect before any documentation is reachable. EDI and
+  ordering integrations are governed by bilateral SLAs in the master distribution agreement
+  rather than by a published per-key throttling contract.
 notes: >-
-  No public rate-limit documentation. Limits below are placeholders.
+  limit_count is an honest zero, replacing the 2026-05-04 bulk-sweep scaffold that carried a
+  placeholder "No Public Rate Limit Documentation" limit row. A placeholder that says a limit
+  is undocumented is not a limit; it has been removed rather than counted.
+limit_count: 0
+limits: []
+response_headers: []
+exhaustion_status_code: null
 sources:
-  - https://www.cencora.com
-responseCodes: {}
-limits:
-  - name: No Public Rate Limit Documentation
-    scope: account
-    metric: varies
-    limit: 'see provider; not publicly documented'
+  - https://www.cencora.com/
 policies:
   - name: Bilateral SLA
     description: >-
-      Throughput, error budgets, and retry semantics are defined by the master
-      distribution / EDI agreement between Cencora and the customer.
+      Throughput, error budgets and retry semantics are defined by the master distribution /
+      EDI agreement between Cencora and the customer, not by a published API policy.
+responseCodes: {}
+x-evidence:
+  checked: '2026-09-02'
+  probes:
+    - url: https://api.cencora.com/
+      http_status: 200
+      note: OAuth redirect shim on every path; no reachable API reference
+    - url: https://www.cencora.com/llms.txt
+      http_status: 200
+      note: served, but names no API, endpoint or limit
 maintainers:
   - FN: API Evangelist
     email: info@apievangelist.com
