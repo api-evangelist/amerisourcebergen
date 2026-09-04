@@ -1,16 +1,16 @@
 ---
 kin_checks:
   slug: amerisourcebergen
-  schema_version: 0.18.0
-  scored_at: '2026-09-01'
-  run_ts: 2026-09-01T222808
+  schema_version: 0.18.2
+  scored_at: '2026-09-04'
+  run_ts: 2026-09-04T062714
   note: Actionable checks only (missed + partial). earned/na are every other check
-    in rubric/scoring-0.18.0.yml; counts below let you verify that.
+    in rubric/scoring-0.18.2.yml; counts below let you verify that.
   counts:
     total: 132
-    earned: 11
-    partial: 3
-    missed: 79
+    earned: 20
+    partial: 2
+    missed: 71
     na: 39
   checks:
   - id: multiple_apis
@@ -51,19 +51,17 @@ kin_checks:
     status: missed
   - id: vocabulary_published
     status: missed
-  - id: conformance_declared
-    status: missed
   - id: overlay_published
     status: missed
   - id: change_log_present
     status: missed
   - id: status_page_present
     status: missed
+  - id: rate_limits_documented
+    status: missed
   - id: rate_limits_rich
     status: missed
   - id: deprecation_policy
-    status: missed
-  - id: security_disclosure
     status: missed
   - id: webhooks_advertised
     status: missed
@@ -78,8 +76,6 @@ kin_checks:
   - id: api_reference_present
     status: missed
   - id: getting_started_present
-    status: missed
-  - id: authentication_documented
     status: missed
   - id: sdk_count_1
     status: missed
@@ -98,6 +94,8 @@ kin_checks:
     detail: pointer liveness 0.0
   - id: blog_present
     status: missed
+  - id: plans_present
+    status: missed
   - id: plans_multiple
     status: missed
   - id: pricing_link
@@ -114,12 +112,6 @@ kin_checks:
     status: missed
   - id: trust_center
     status: missed
-  - id: reg_oauth_scopes
-    status: missed
-  - id: reg_authentication_documented
-    status: missed
-  - id: reg_vulnerability_disclosure
-    status: missed
   - id: reg_terms_of_service
     status: missed
     detail: pointer liveness 0.0
@@ -128,11 +120,7 @@ kin_checks:
     detail: pointer liveness 0.0
   - id: reg_compliance_published
     status: missed
-  - id: reg_standards_conformance
-    status: missed
   - id: reg_named_standard_conformance
-    status: missed
-  - id: reg_consent_model
     status: missed
   - id: reg_smart_configuration
     status: missed
@@ -148,8 +136,6 @@ kin_checks:
     status: missed
   - id: mcp_server
     status: missed
-  - id: auth_clarity
-    status: missed
   - id: idempotency
     status: missed
   - id: error_semantics
@@ -159,8 +145,6 @@ kin_checks:
   - id: event_surface_described
     status: missed
   - id: agent_skills
-    status: missed
-  - id: well_known_catalog
     status: missed
   - id: consent_identity
     status: missed
@@ -176,12 +160,10 @@ kin_checks:
     status: missed
   - id: agentic_commerce
     status: missed
-  - id: rate_limits_documented
+  - id: auth_clarity
     status: partial
-    earned: 2.0
-  - id: plans_present
-    status: partial
-    earned: 2.0
+    earned: 9.0
+    detail: 'grade: served'
   - id: rate_limit_signal
     status: partial
     earned: 3.5
