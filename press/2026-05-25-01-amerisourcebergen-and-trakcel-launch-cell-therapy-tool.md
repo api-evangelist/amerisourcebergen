@@ -1,7 +1,9 @@
 ---
 title: AmerisourceBergen & TrakCel Launch Cell Therapy Tool
 url: https://www.cencora.com/newsroom/amerisourcebergen-and-trakcel-launch-integrated-platform-to-support-cgts
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"AmerisourceBergen" press release artificial intelligence'
 position: 1
 source: serpapi-google
