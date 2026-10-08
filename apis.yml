@@ -84,6 +84,12 @@ apis:
       without credentials, and Cencora publishes no page describing how a developer obtains
       them. Probed 2026-09-02.
 common:
+  - type: Plans
+    url: plans/amerisourcebergen-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/amerisourcebergen-rate-limits.yml
+  - type: FinOps
+    url: finops/amerisourcebergen-finops.yml
   - url: https://www.cencora.com/stories
     type: Blog
   - type: DomainSecurity
