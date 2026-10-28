@@ -1,4 +1,4 @@
-# AmerisourceBergen (amerisourcebergen)
+# AmerisourceBergen
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,78 +66,113 @@
 
 AmerisourceBergen (now Cencora) fosters a positive impact on healthcare around the world by advancing the development and delivery of pharmaceuticals and healthcare products. The company provides pharmaceutical distribution, manufacturer solutions, provider solutions, and animal health solutions across 50+ countries through 1,300+ facilities.
 
-**URL:** [https://www.amerisourcebergen.com](https://www.amerisourcebergen.com)
+**Areas:** Pharmaceutical Distribution · Healthcare · Drug Distribution · Manufacturer Solutions · Provider Solutions · Animal Health · Life Sciences · Fortune 100
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## AmerisourceBergen on APIs.io
 
-## Tags:
+Everything profiled for AmerisourceBergen is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/amerisourcebergen/](https://apis.io/providers/amerisourcebergen/)** — or go straight to one of the APIs or properties below.
 
- - Pharmaceutical Distribution, Healthcare, Drug Distribution, Manufacturer Solutions, Provider Solutions, Animal Health, Life Sciences
+### APIs (2)
 
-## Timestamps
+- [AmerisourceBergen Website](https://apis.io/apis/amerisourcebergen/website/) — AmerisourceBergen (now Cencora) is one of the largest global pharmaceutical distributors, serving pharmaceutical manufacturers, healthcare providers, and…
+- [Cencora API Developer Portal](https://apis.io/apis/amerisourcebergen/developer-portal/) — Cencora operates an SAP API Business Hub Enterprise developer portal at api.cencora.com — DNS resolves to…
 
-- **Created:** 2024-01-01
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### AmerisourceBergen Website
-AmerisourceBergen (now Cencora) is one of the largest global pharmaceutical distributors, serving pharmaceutical manufacturers, healthcare providers, and patients worldwide. The company does not currently publish a public developer API.
+#### Security (3)
 
-**Human URL:** [https://www.amerisourcebergen.com](https://www.amerisourcebergen.com)
+Authentication, trust centre, and vulnerability disclosure.
 
-#### Tags:
+- [Amerisourcebergen Authentication](https://apis.io/security/amerisourcebergen/amerisourcebergen-authentication/)
+- [Amerisourcebergen Domain Security](https://apis.io/security/amerisourcebergen/amerisourcebergen-domain-security/)
+- [Amerisourcebergen Vulnerability Disclosure](https://apis.io/security/amerisourcebergen/amerisourcebergen-vulnerability-disclosure/)
 
- - Pharmaceutical Distribution, Healthcare, Drug Distribution
+#### OAuth scopes (1)
 
-#### Properties
+The permissions the API asks for.
 
-- [Website](https://www.amerisourcebergen.com)
+- [Amerisourcebergen Scopes](https://apis.io/scopes/amerisourcebergen/amerisourcebergen-scopes/)
 
-## Common Properties
+#### Plans and pricing (1)
 
-- [Portal](https://www.amerisourcebergen.com)
+Published plans, tiers and prices.
+
+- [Amerisourcebergen Plans Pricing](https://apis.io/plans/amerisourcebergen/amerisourcebergen-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Amerisourcebergen Rate Limits](https://apis.io/rate-limits/amerisourcebergen/amerisourcebergen-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Amerisourcebergen Finops](https://apis.io/finops/amerisourcebergen/amerisourcebergen-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.cencora.com)
-- [PrivacyPolicy](https://www.amerisourcebergen.com/privacy-policy)
-- [TermsOfService](https://www.amerisourcebergen.com/terms-of-use)
-- [Support](https://www.amerisourcebergen.com/contact)
-- [LinkedIn](https://www.linkedin.com/company/amerisourcebergen)
-- [X](https://twitter.com/AmerisourceBrg)
+- [Support](https://www.cencora.com/contact-us)
+- [Blog](https://www.cencora.com/stories)
+- [Security](https://www.cencora.com/responsible-disclosure)
+- [Terms of service](https://www.cencora.com/global-terms-and-conditions)
+- [Privacy policy](https://www.cencora.com/global-privacy-statement-overview)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| Pharmaceutical Distribution | U.S. and global distribution network supplying pharmaceutical products from manufacturers to healthcare providers including pharmacies, hospitals, and physician practices. |
-| Manufacturer Solutions | End-to-end support for pharmaceutical manufacturers from drug research and clinical development through commercialization, patient access, and specialty logistics. |
-| Provider Solutions | Solutions for healthcare providers including pharmacies, hospitals, health systems, long-term care facilities, and specialty physician practices to optimize operations and patient care. |
-| Animal Health Solutions | Distribution and solutions for veterinary and livestock pharmaceutical products through the MWI Animal Health business. |
-| Patient Access and Adherence | Programs addressing barriers to medication access and improving speed-to-therapy through pharmaceutical patient support services. |
-| Specialty Logistics and Warehousing | Global distribution with specialized packaging, temperature-controlled storage, and customs expertise for specialty and rare disease therapies. |
-| Cell and Gene Therapy Access | Commercialization capabilities connecting manufacturers to health systems and patients for advanced cell and gene therapy products. |
-| Biosimilar Support | Education and support programs for accessing and building confidence in biosimilar therapies across the healthcare ecosystem. |
+**Kin Score 23.7** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 28.6 |
+| Access clarity | 21.1 |
 
-| Name | Description |
-|------|-------------|
-| Drug Commercialization | Support pharmaceutical manufacturers in launching new drugs to market with distribution, patient support, and market access services. |
-| Pharmacy Operations | Enable independent, retail, and specialty pharmacies to efficiently source products and optimize business performance. |
-| Hospital and Health System Supply | Supply hospitals and health systems with pharmaceutical products, specialty drugs, and biosimilars reliably and efficiently. |
-| Rare Disease and Orphan Drug Distribution | Specialized distribution and patient support programs for rare and orphan disease therapies requiring complex handling. |
-| Global Pharmaceutical Logistics | Manage international pharmaceutical supply chains with local presence in 50+ countries and expertise in regulatory compliance. |
-| Clinical Trial Supply | Streamline drug development processes and minimize risk by providing clinical trial supply chain and distribution support. |
+**Agent readiness 11.9** — agent-aware
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | yes |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-| Name | Description |
-|------|-------------|
-| Good Neighbor Pharmacy Network | Independent pharmacy network providing purchasing programs, business solutions, and marketing support to community pharmacies. |
-| MWI Animal Health | Animal health distribution subsidiary providing veterinary products and solutions to veterinary practices and livestock operations. |
-| Xcenda | Consulting and market access affiliate providing healthcare analytics, reimbursement support, and market access strategies for manufacturers. |
+**Regulatory alignment 37.5** — Health
 
-## Maintainers
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/amerisourcebergen/](https://apis.io/providers/amerisourcebergen/).
 
-**FN:** API Evangelist
+## How this profile is made
 
-**Email:** info@apievangelist.com
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for AmerisourceBergen: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/amerisourcebergen/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
